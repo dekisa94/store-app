@@ -1,12 +1,13 @@
 <template>
   <div>
+    <label>Search</label><input v-model="searchTerm" type="text"/>
         <table class="table">
           <thead>
           <th>Title</th>
           <th>Quantity</th>
           </thead>
           <tbody>
-            <tr v-for="product in products" :key="product.id">
+            <tr v-for="product in filteredProducts" :key="product.id">
               <td> {{ product.title }} </td>
               <td> {{ product.quantity }} </td>
             </tr>
@@ -20,7 +21,15 @@ import {productService} from '../service/ProductService'
 export default {
   data(){
     return{
-      products:productService.list()
+      products:productService.list(),
+      searchTerm: ''
+    }
+  },
+  computed:{
+    filteredProducts(){
+    return this.products.filter(product => {
+      return product.title.toLowerCase().startsWith(this.searchTerm.toLowerCase())
+    })
     }
   }
 }
