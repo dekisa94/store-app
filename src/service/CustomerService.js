@@ -11,6 +11,9 @@ const customers = [
     delete(customer){
         customers.splice(customers.indexOf(customer), 1)
     }
+    add(newCustomer){
+        customers.push(newCustomer)
+    }
  }
  
  export const customerService = new CustomerService()
