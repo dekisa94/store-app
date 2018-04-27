@@ -13,10 +13,10 @@
       </tbody>
     </table>
        
-      <!-- <ul class="list-group">
+      <ul class="list-group">
           <li v-for="product in customer.products"
-            :key="customer.id" class="list-group-item"> product </li>
-      </ul> -->
+            :key="product.id" class="list-group-item"> {{product}} </li>
+      </ul>
       <router-link to="/customers" class="badge badge-info">Back to customers</router-link>
   </div>
 </template>

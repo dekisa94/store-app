@@ -1,5 +1,5 @@
 const customers = [
-    { id:1, firstName: 'Pera', lastName: 'Perovic', email:'pera@exm.com', products: [] },
+    { id:1, firstName: 'Pera', lastName: 'Perovic', email:'pera@exm.com', products: ['digitron', 'telefon'] },
     { id:2, firstName: 'Jova', lastName: 'Jovic', email:'jova@exm.com', products: [] },
     { id:3, firstName: 'Mica', lastName: 'Micic', email:'mica@exm.com', products: [] }
  ]
