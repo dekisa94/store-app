@@ -17,6 +17,7 @@
             v-for="customer in customers"
             :key="customer.id"
             >{{ customer.firstName }} {{ customer.lastName }}
+            <router-link :to="'/customers/'+customer.id" class="ml-5 float-right">Latest Purchases</router-link>
             <button class="btn btn-danger float-right" @click="deleteCustomer(customer)">Remove</button>
             </div>
         </div>

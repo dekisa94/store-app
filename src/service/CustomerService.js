@@ -4,6 +4,7 @@ const customers = [
     { id:3, firstName: 'Mica', lastName: 'Micic', email:'mica@exm.com', products: [] }
  ]
  
+ let nextId=4
  export default class CustomerService{
     list(){
         return customers
@@ -12,7 +13,12 @@ const customers = [
         customers.splice(customers.indexOf(customer), 1)
     }
     add(newCustomer){
+        newCustomer.id=nextId
         customers.push(newCustomer)
+        nextId++
+    }
+    get(id){
+        return customers.find(customer => customer.id==id)
     }
  }
  
